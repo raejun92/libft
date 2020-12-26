@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:11:03 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/26 14:41:05 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/26 15:07:19 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*c;
+	unsigned char	*str;
 	size_t			i;
 
 	c = s;
 	i = 0;
 	while (i < n)
 	{
-		c[i] = 0;
+		str[i] = 0;
 		i++;
 	}
 }
