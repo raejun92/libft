@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/26 14:11:03 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/28 13:52:21 by juchoi           ###   ########.fr       */
+/*   Created: 2020/12/28 15:48:08 by juchoi            #+#    #+#             */
+/*   Updated: 2020/12/28 18:34:50 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+int		strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*str;
-	size_t			i;
+	size_t	i;
 
-	str = s;
 	i = 0;
+	if (n == 0)
+		return (0);
 	while (i < n)
 	{
-		str[i] = 0;
+		if (s1[i] != s2[i] || s1 == '\0' || s2 == '\0')
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
+	return (0);
 }

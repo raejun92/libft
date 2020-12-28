@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/26 14:11:03 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/28 13:52:21 by juchoi           ###   ########.fr       */
+/*   Created: 2020/12/28 18:26:49 by juchoi            #+#    #+#             */
+/*   Updated: 2020/12/28 18:33:55 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n)
+int		ft_isalnum(int c)
 {
-	unsigned char	*str;
-	size_t			i;
-
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

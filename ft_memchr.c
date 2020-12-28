@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/26 14:11:03 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/28 13:52:21 by juchoi           ###   ########.fr       */
+/*   Created: 2020/12/27 10:28:54 by juchoi            #+#    #+#             */
+/*   Updated: 2020/12/27 11:11:54 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*str;
-	size_t			i;
+	const unsigned char *str;
+	size_t				i;
 
-	str = s;
 	i = 0;
+	str = s;
 	while (i < n)
 	{
-		str[i] = 0;
+		if (str[i] == (unsigned char)c)
+			return (str + i);
 		i++;
 	}
+	return (0);
 }
