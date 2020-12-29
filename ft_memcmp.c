@@ -6,11 +6,11 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 11:27:33 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/27 14:32:35 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 18:22:00 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {

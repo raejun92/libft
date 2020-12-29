@@ -6,11 +6,11 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 20:24:42 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/26 22:59:32 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 21:34:53 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -30,7 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 		while (i < len)
 		{
-			str1[len - 1] = srt2[len - 1];
+			str1[len - 1] = str2[len - 1];
 			len--;
 		}
 	return (dst);

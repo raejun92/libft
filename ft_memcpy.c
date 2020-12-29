@@ -6,11 +6,11 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:42:35 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/26 15:44:06 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 21:33:06 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*str1;
 	const unsigned char	*str2;
 
-	if (str1 == str2 || (!str1 && !str2) || n == 0)
+	if (dst == src || (!dst && !src) || n == 0)
 		return (dst);
 	i = 0;
 	str1 = dst;

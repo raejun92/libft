@@ -6,9 +6,11 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 18:41:50 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/28 22:20:44 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 18:29:41 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isprint(int c)
 {

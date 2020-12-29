@@ -6,11 +6,11 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:11:03 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/28 13:52:21 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 18:17:41 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

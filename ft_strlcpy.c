@@ -6,11 +6,11 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 17:04:27 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/27 17:31:38 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 21:38:52 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -22,7 +22,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	while (src[src_l])
 		src_l++;
 	if (dstsize != 0)
-		while (src[i] != '\0' && i < size - 1)
+		while (src[i] != '\0' && i < dstsize - 1)
 		{
 			dst[i] = src[i];
 			i++;

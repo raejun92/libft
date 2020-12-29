@@ -6,9 +6,11 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 18:35:29 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/28 18:41:25 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/29 18:29:11 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isascii(int c)
 {
