@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 22:53:57 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/29 18:25:51 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/30 21:27:56 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (h_l < n_l || len < n_l)
 		return (0);
 	i = 0;
-	while (haystack[i] && n_l + i <= len)
+	while (haystack[i] && (n_l + i <= len))
 	{
 		if (haystack[i] == *needle && ft_memcmp(&haystack[i], needle, n_l) == 0)
 			return ((char *)&haystack[i]);

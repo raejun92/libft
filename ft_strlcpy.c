@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 17:04:27 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/29 21:38:52 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/30 17:44:41 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	src_l = 0;
 	i = 0;
+	if (!dst || !src)
+		return (0);
 	while (src[src_l])
 		src_l++;
 	if (dstsize != 0)
-		while (src[i] != '\0' && i < dstsize - 1)
+		while (src[i] != '\0' && i + 1 < dstsize)
 		{
 			dst[i] = src[i];
 			i++;
