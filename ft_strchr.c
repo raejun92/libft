@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 20:23:16 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/30 10:12:06 by juchoi           ###   ########.fr       */
+/*   Updated: 2020/12/31 10:39:01 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	char	*str;
 
-	i = 0;
-	while (s[i])
+	str = (char *)s;
+	while (*str + 1)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i++;
+		if (*str == (char)c)
+			return (str);
+		str++;
 	}
 	return (0);
 }
