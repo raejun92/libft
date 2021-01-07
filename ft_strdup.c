@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 18:01:55 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/30 22:02:37 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/07 14:54:01 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strdup(const char *s1)
 		str[i] = s1[i];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
