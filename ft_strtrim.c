@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 21:35:10 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/06 00:23:36 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/07 23:24:52 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 			end--;
 	if (start >= end)
 		return (ft_strdup(""));
-	if (!(str = (char *)malloc(sizeof(char) * end - start + 1)))
+	if (!(str = (char *)malloc(sizeof(char) * (end - start + 1))))
 		return (0);
 	ft_memcpy(str, s1 + start, (end - start));
-	str[end] = '\0';
+	str[end - start] = '\0';
 	return (str);
 }
