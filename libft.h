@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 18:05:13 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/09 22:29:32 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/10 16:07:08 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
