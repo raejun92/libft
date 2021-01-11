@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:15:57 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/09 14:16:52 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/11 17:14:40 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ unsigned int      str_l(char const *s, char c, unsigned int check)
 		if (check == cnt)
         {
             j = i;
-            while (s[j] != c)
+            while (s[j] && s[j] != c)
                 j++;
             return (j - i);
         }
@@ -84,15 +84,15 @@ char			**ft_split(char const *s, char c)
 {
     char            **str;
     unsigned int    i;
-    unsigned int    c_l;
+    unsigned int    f_l;
 	unsigned int	s_l;
 	char			*str_s;
 
-    c_l = c_count(s, c);
-    if (!(str = (char **)malloc(sizeof(char *) * (c_l + 1))))
+    f_l = c_count(s, c);
+    if (!(str = (char **)malloc(sizeof(char *) * (f_l + 1))))
         return (0);
     i = 0;
-    while (i <= c_l)
+    while (i < f_l)
     {
         str_s = start_str(s, c, (i + 1));
 		s_l = str_l(s, c, (i + 1));
@@ -101,5 +101,6 @@ char			**ft_split(char const *s, char c)
 		ft_strlcpy(str[i], str_s, (s_l + 1));
 		i++;
     }
+	str[f_l] = 0;
 	return (str);
 }
