@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:15:57 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/11 17:55:27 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/11 21:22:57 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,20 @@ unsigned int	str_l(char const *s, char c, unsigned int check)
 	return (i);
 }
 
+char			**m_free(char **str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (0);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char			**str;
@@ -97,7 +111,7 @@ char			**ft_split(char const *s, char c)
 		str_s = start_str(s, c, (i + 1));
 		s_l = str_l(s, c, (i + 1));
 		if (!(str[i] = (char *)malloc(sizeof(char) * (s_l + 1))))
-			return (0);
+			m_free(str);
 		ft_strlcpy(str[i], str_s, (s_l + 1));
 		i++;
 	}
