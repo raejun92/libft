@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 18:05:13 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/11 23:06:56 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/13 01:20:13 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+t_list				*ft_lstnew(void *content);
 
 #endif

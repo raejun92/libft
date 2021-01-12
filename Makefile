@@ -1,6 +1,7 @@
 NAME = libft.a
 
 OBJS = $(FILES:.c=.o)
+B_OBJS = $(BONUS:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 FILES = ft_memset.c \
@@ -36,7 +37,9 @@ FILES = ft_memset.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c 
+
+BONUS = ft_lstnew.c 
 
 .PHONY : all clean fclean re
 
@@ -45,6 +48,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar rc $@ $^
 
+bonus : $(OBJS) $(B_OBJS)
+	ar rc $(NAME) $^ $^
 clean :
 	rm -f *.o
 
