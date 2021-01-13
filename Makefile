@@ -39,7 +39,8 @@ FILES = ft_memset.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c 
 
-BONUS = ft_lstnew.c 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c
 
 .PHONY : all clean fclean re
 
@@ -48,8 +49,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar rc $@ $^
 
-bonus : $(OBJS) $(B_OBJS)
-	ar rc $(NAME) $^ $^
+bonus : $(B_OBJS)
+	ar rc $(NAME) $^
 clean :
 	rm -f *.o
 
