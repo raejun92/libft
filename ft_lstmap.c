@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 17:20:07 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/15 15:41:21 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/15 16:15:11 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (n_lst);
 }
-
