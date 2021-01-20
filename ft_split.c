@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:15:57 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/11 21:22:57 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/19 20:38:04 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ char			**ft_split(char const *s, char c)
 	unsigned int	s_l;
 	char			*str_s;
 
+	if (!s)
+		return (0);
 	f_l = c_count(s, c);
 	if (!(str = (char **)malloc(sizeof(char *) * (f_l + 1))))
 		return (0);

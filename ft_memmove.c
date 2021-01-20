@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 20:24:42 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/29 21:34:53 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/19 12:58:37 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char			*str1;
-	const unsigned char		*str2;
+	unsigned char			*str2;
 	size_t					i;
 
 	i = 0;
-	str1 = dst;
-	str2 = src;
+	if (dst == src || !len)
+		return (dst);
+	str1 = (unsigned char *)dst;
+	str2 = (unsigned char *)src;
 	if (dst < src)
 		while (i < len)
 		{

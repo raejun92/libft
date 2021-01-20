@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 22:11:25 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/09 22:14:02 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/19 20:30:17 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int len;
 
+	if (!s)
+		return ;
 	len = ft_strlen(s);
 	write(fd, s, len);
 }

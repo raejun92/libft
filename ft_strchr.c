@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 20:23:16 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/04 23:15:01 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/19 17:16:39 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	str = (char *)s;
-	if (!str)
-		return (0);
 	while (*str)
 	{
 		if (*str == (char)c)
