@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 11:27:33 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/29 18:22:00 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/20 12:05:16 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t					i;
 
 	i = 0;
-	str1 = s1;
-	str2 = s2;
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
 	if (n == 0 || str1 == str2)
 		return (0);
 	while (i < n)

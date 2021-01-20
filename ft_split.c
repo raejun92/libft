@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:15:57 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/19 20:38:04 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/20 16:37:32 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ char			*start_str(char const *s, char c, unsigned int check)
 
 	cnt = 0;
 	i = 0;
-	if (!s[i])
-		return (0);
 	while (s[i] == c)
 		i++;
 	while (s[i])

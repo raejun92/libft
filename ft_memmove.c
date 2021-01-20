@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 20:24:42 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/19 12:58:37 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/20 11:52:27 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t					i;
 
 	i = 0;
+	if (!dst && !src)
+		return (0);
 	if (dst == src || !len)
 		return (dst);
 	str1 = (unsigned char *)dst;

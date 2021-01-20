@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:57:19 by juchoi            #+#    #+#             */
-/*   Updated: 2020/12/29 18:17:09 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/20 11:21:49 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*str;
 
 	i = 0;
-	str = b;
+	str = (unsigned char *)b;
 	while (i < len)
 	{
 		str[i] = (unsigned char)c;
