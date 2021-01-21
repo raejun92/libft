@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:03:06 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/21 16:08:25 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/21 18:12:12 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char				**ft_split(char const *s, char c)
 		str_s = start_str(s, c, (i + 1));
 		s_l = str_l(s, c, (i + 1));
 		if (!(str[i] = (char *)malloc(sizeof(char) * (s_l + 1))))
-			m_free(str);
+			return (m_free(str));
 		ft_strlcpy(str[i], str_s, (s_l + 1));
 		i++;
 	}
