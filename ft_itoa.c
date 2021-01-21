@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 12:37:21 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/20 16:56:11 by juchoi           ###   ########.fr       */
+/*   Created: 2021/01/21 15:58:15 by juchoi            #+#    #+#             */
+/*   Updated: 2021/01/21 15:58:18 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intlen(int n)
+static int		ft_intlen(int n)
 {
 	int i;
 
@@ -27,7 +27,7 @@ int		ft_intlen(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char		*str;
 	int			len;

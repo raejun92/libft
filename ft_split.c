@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/09 14:15:57 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/20 16:37:32 by juchoi           ###   ########.fr       */
+/*   Created: 2021/01/21 16:03:06 by juchoi            #+#    #+#             */
+/*   Updated: 2021/01/21 16:08:25 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	c_count(char const *s, char c)
+static unsigned int	c_count(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	cnt;
@@ -30,7 +30,7 @@ unsigned int	c_count(char const *s, char c)
 	return (cnt);
 }
 
-char			*start_str(char const *s, char c, unsigned int check)
+static char			*start_str(char const *s, char c, unsigned int check)
 {
 	unsigned int	i;
 	unsigned int	cnt;
@@ -50,7 +50,7 @@ char			*start_str(char const *s, char c, unsigned int check)
 	return ((char *)s);
 }
 
-unsigned int	str_l(char const *s, char c, unsigned int check)
+static unsigned int	str_l(char const *s, char c, unsigned int check)
 {
 	unsigned int	i;
 	unsigned int	cnt;
@@ -58,8 +58,6 @@ unsigned int	str_l(char const *s, char c, unsigned int check)
 
 	cnt = 0;
 	i = 0;
-	if (!s[i])
-		return (0);
 	while (s[i] == c)
 		i++;
 	while (s[i])
@@ -78,7 +76,7 @@ unsigned int	str_l(char const *s, char c, unsigned int check)
 	return (i);
 }
 
-char			**m_free(char **str)
+static char			**m_free(char **str)
 {
 	unsigned int	i;
 
@@ -92,7 +90,7 @@ char			**m_free(char **str)
 	return (0);
 }
 
-char			**ft_split(char const *s, char c)
+char				**ft_split(char const *s, char c)
 {
 	char			**str;
 	unsigned int	i;
