@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:02:34 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/21 16:02:36 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/23 11:22:38 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long long	ln;
 
-	ln = n;
+	ln = (long long)n;
 	if (n < 0)
 	{
-		ln = -1 * (long long)n;
+		ln = -1 * ln;
 		write(fd, "-", 1);
 	}
 	if (ln >= 10)
