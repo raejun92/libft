@@ -6,7 +6,7 @@
 /*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:03:06 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/25 13:21:08 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/25 13:43:34 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static void			str_point_len(char **str_point, unsigned int *str_len,
 
 	*str_point = *str_point + *str_len;
 	*str_len = 0;
-	while (**str_point != '\0' && **str_point == c)
+	while (**str_point && **str_point == c)
 		(*str_point)++;
 	i = 0;
-	while ((*str_point)[i] != '\0' && (*str_point)[i] != c)
+	while ((*str_point)[i] && (*str_point)[i] != c)
 	{
 		(*str_len)++;
 		i++;
