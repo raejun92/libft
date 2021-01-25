@@ -3,80 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchoi <juchoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: juchoi <juchoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:03:06 by juchoi            #+#    #+#             */
-/*   Updated: 2021/01/21 18:12:12 by juchoi           ###   ########.fr       */
+/*   Updated: 2021/01/25 13:21:08 by juchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	c_count(char const *s, char c)
+static unsigned int	cnt_word(char const *s, char c)
 {
 	unsigned int	i;
-	unsigned int	cnt;
+	unsigned int	word_cnt;
 
-	cnt = 0;
 	i = 0;
-	while (s[i] == c)
-		i++;
+	word_cnt = 0;
 	while (s[i])
 	{
-		if ((s[i] != c && i == 0) || (s[i] != c && s[i - 1] == c))
-			cnt++;
-		i++;
-	}
-	return (cnt);
-}
-
-static char			*start_str(char const *s, char c, unsigned int check)
-{
-	unsigned int	i;
-	unsigned int	cnt;
-
-	cnt = 0;
-	i = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i])
-	{
-		if ((s[i] != c && i == 0) || (s[i] != c && s[i - 1] == c))
-			cnt++;
-		if (check == cnt)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((char *)s);
-}
-
-static unsigned int	str_l(char const *s, char c, unsigned int check)
-{
-	unsigned int	i;
-	unsigned int	cnt;
-	unsigned int	j;
-
-	cnt = 0;
-	i = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i])
-	{
-		if ((s[i] != c && i == 0) || (s[i] != c && s[i - 1] == c))
-			cnt++;
-		if (check == cnt)
+		if (s[i] == c)
+			i++;
+		else
 		{
-			j = i;
-			while (s[j] && s[j] != c)
-				j++;
-			return (j - i);
+			word_cnt++;
+			i++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		i++;
 	}
-	return (i);
+	return (word_cnt);
 }
 
-static char			**m_free(char **str)
+static void			str_point_len(char **str_point, unsigned int *str_len,
+								char c)
+{
+	unsigned int	i;
+
+	*str_point = *str_point + *str_len;
+	*str_len = 0;
+	while (**str_point != '\0' && **str_point == c)
+		(*str_point)++;
+	i = 0;
+	while ((*str_point)[i] != '\0' && (*str_point)[i] != c)
+	{
+		(*str_len)++;
+		i++;
+	}
+	return ;
+}
+
+static char			**free_malloc(char **str)
 {
 	unsigned int	i;
 
@@ -93,26 +69,27 @@ static char			**m_free(char **str)
 char				**ft_split(char const *s, char c)
 {
 	char			**str;
+	char			*str_point;
 	unsigned int	i;
-	unsigned int	f_l;
-	unsigned int	s_l;
-	char			*str_s;
+	unsigned int	word_cnt;
+	unsigned int	str_len;
 
 	if (!s)
 		return (0);
-	f_l = c_count(s, c);
-	if (!(str = (char **)malloc(sizeof(char *) * (f_l + 1))))
+	word_cnt = cnt_word(s, c);
+	if (!(str = (char **)malloc(sizeof(char *) * (word_cnt + 1))))
 		return (0);
+	str_point = (char *)s;
+	str_len = 0;
 	i = 0;
-	while (i < f_l)
+	while (i < word_cnt)
 	{
-		str_s = start_str(s, c, (i + 1));
-		s_l = str_l(s, c, (i + 1));
-		if (!(str[i] = (char *)malloc(sizeof(char) * (s_l + 1))))
-			return (m_free(str));
-		ft_strlcpy(str[i], str_s, (s_l + 1));
+		str_point_len(&str_point, &str_len, c);
+		if (!(str[i] = (char *)malloc(sizeof(char) * (str_len + 1))))
+			return (free_malloc(str));
+		ft_strlcpy(str[i], str_point, str_len + 1);
 		i++;
 	}
-	str[f_l] = 0;
+	str[i] = 0;
 	return (str);
 }
